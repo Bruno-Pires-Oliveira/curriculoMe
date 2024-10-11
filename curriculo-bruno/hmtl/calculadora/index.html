@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="card">
+        <h1 id="h1Change">Calculadora</h1>
+        <form id="formId">
+          <div>
+            <label for="num1">Primeiro Número:</label>
+            <input type="number" name="num1" id="num1" />
+          </div>
+
+          <div>
+            <label for="num2">Segundo Número:</label>
+            <input type="number" name="num2" id="num2" />
+          </div>
+
+          <button type="button" onclick="Soma()">Somar:</button>
+          <button type="button" onclick="Subtrair()">Subtrair:</button>
+          <button type="button" onclick="Multiplicar()">Multiplicação:</button>
+          <button type="button" onclick="Dividir()">Divisão:</button>
+          <button type="button" onclick="RaizQuadrada()">
+            Raiz Quadrada: (Utilize apenas o primeiro input com número)
+          </button>
+          <button type="button" onclick="Potencia()">
+            Potencia: (Use o primeiro input com parametro para a base e o
+            segundo com o expoente)
+          </button>
+          <button type="button" onclick="Media()">
+            Média: (Somente entre dois números)
+          </button>
+          <button type="button" onclick="Porcentagem()">
+            Porcentagem (Utilize o primeiro como número para ser tirado a
+            porcentagem, ex: 25,00 25%)
+          </button>
+          <button type="button" onclick="Logaritmo()">
+            Logaritmo: (Use o primeiro como numero e o segundo com base )
+          </button>
+          <a href="./bhaskara.html" target="_self"
+            >Clique aqui para ir para uma calculadora de Bhaskara!</a
+          >
+          <a href="./juntaStrings.html" target="_self"
+            >Ou clique aqui para ir para o junta Strings</a
+          >
+          <a href="../index.html">Clique aqui para voltar ao Currículo</a>
+          <p id="res"></p>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      /**
+       * Soma o primeiro número com o segundo e exibe o resultado na ṕgina.
+       */
+      function Soma() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+
+        res.innerHTML =
+          res.innerHTML = `A Soma entre ${num1} e ${num2} e igual a ${
+            Number(num1) + Number(num2)
+          }`;
+      }
+
+      /**
+       * Subtrai o primeiro número pelo segundo e exibe o resultado na ṕgina.
+       */
+      function Subtrair() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+
+        res.innerHTML = `A subtração entre ${num1} e ${num2} e igual a ${
+          Number(num1) - Number(num2)
+        }`;
+      }
+      /**
+       * Multiplica o primeiro número pelo segundo e exibe o resultado na ṕgina.
+       */
+      function Multiplicar() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+        res.innerHTML = `A multiplicação entre ${num1} e ${num2} e igual a ${
+          Number(num1) * Number(num2)
+        }`;
+      }
+      /**
+       * Divide o primeiro número pelo segundo e exibe o resultado na ṕgina.
+       * Se o segundo número for zero, exibe uma mensagem de erro.
+       */
+      function Dividir() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+        if (num2 == 0) {
+          res.innerText = "Não é possível dividir por 0";
+        } else {
+          res.innerHTML = `A divisão entre ${num1} e ${num2} e igual a ${toFixed(
+            Number(num1) / Number(num2)
+          )}`;
+        }
+      }
+      /**
+       * Calcula a raiz quadrada do primeiro ou segundo número (dependendo de qual esteja preenchido) e exibe o resultado na pagina.
+       * Se o segundo número for preenchido, calcula a raiz quadrada dele, caso contrário, calcula a raiz quadrada do primeiro número.
+       * Se o número for negativo, exibe uma mensagem de erro.
+       */
+      function RaizQuadrada() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+
+        let res = document.getElementById("res");
+        if (num1 < 0 || num2 < 0) {
+          res.innerHTML = "Não existe raiz quadrada de um número negativo";
+        } else if (num2 > 0) {
+          res.innerHTML = `A raiz quadrada de ${num2} e igual a ${Math.sqrt(
+            Number(num2)
+          )}`;
+        } else {
+          if (num1 == "") {
+            num1 = 0;
+          }
+          res.innerHTML = `A raiz quadrada de ${num1} e igual a ${Math.sqrt(
+            Number(num1)
+          )}`;
+        }
+      }
+
+      /**
+       * Calcula a potência do primeiro número elevado ao segundo número e exibe o resultado na pagina.
+       * Se o segundo número for 0, exibe 1.
+       */
+      function Potencia() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+        let resultado = Math.pow(Number(num1), Number(num2));
+        if (resultado > 21479483647) {
+          alert("Acima da capacidade de 32 bits");
+        } else {
+          res.innerHTML = `A potência de ${num1} elevado a ${num2} e igual a ${resultado}`;
+        }
+      }
+      /**
+       * Calcula a media entre dois números e exibe o resultado na p gina.
+       * A media é calculada somando os dois valores e dividindo pelo 2.
+       */
+      function Media() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+        res.innerHTML = `A média entre ${num1} e ${num2} é de ${
+          (Number(num1) + Number(num2)) / 2
+        }`;
+      }
+
+      /**
+       * Calcula a porcentagem do primeiro número em relação ao segundo e exibe o resultado na pagina.
+       * O primeiro número é o valor que será calculado a porcentagem e o segundo número é o percentual que será aplicado.
+       * Por exemplo, se o primeiro número for 25 e o segundo for 25, o resultado será 6.25 (25% de 25).
+       */
+      function Porcentagem() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+
+        res.innerHTML = `A porcentagem entre ${num1} e ${num2} é de ${
+          (num1 * num2) / 100
+        }`;
+      }
+
+      /**
+       * Calcula o logaritmo do primeiro número na base do segundo número e exibe o resultado na pagina.
+       * O primeiro número é o valor que vai ser calculado o logaritmo e o segundo número é a base do logaritmo.
+       */
+      function Logaritmo() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let res = document.getElementById("res");
+        if (num1 < 0 || num2 < 0) {
+          res.innerHTML = "Não existe logaritmo de um número negativo";
+        } else if (num2 == 0 || num1 == 0) {
+          res.innerHTML = "Não existe log de 0 por 0! ";
+        } else {
+          res.innerHTML =
+            "O logaritmo de " +
+            num1 +
+            " na base " +
+            num2 +
+            " e igual a " +
+            Math.log(num2) / Math.log(num1);
+        }
+      }
+    </script>
+  </body>
+</html>

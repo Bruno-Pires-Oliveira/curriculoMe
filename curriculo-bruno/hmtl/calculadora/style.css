@@ -1,0 +1,87 @@
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #121212; /* Cor de fundo escura */  
+    margin: 0;  
+    padding: 20px;  
+    color: #e0e0e0; /* Cor do texto clara */  
+}  
+
+#app {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+}  
+
+.card {  
+    background: #1e1e1e; /* Fundo escuro da card */  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra mais forte */  
+    padding: 20px;  
+    width: 300px;  
+}  
+
+h1 {  
+    text-align: center;  
+    color: #fff; /* Cor do texto do título */  
+}  
+
+form {  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+div {  
+    margin-bottom: 15px;  
+}  
+
+label {  
+    margin-bottom: 5px;  
+    color: #ccc; /* Cor das labels */  
+}  
+p{
+    font-size: 1.5rem;
+}
+input[type="number"] {  
+    padding: 8px;  
+    border: 1px solid #444; /* Borda mais escura */  
+    border-radius: 4px;  
+    width: 100%;  
+    box-sizing: border-box;  
+    background-color: #333; /* Fundo escuro do input */  
+    color: #e0e0e0; /* Texto claro dentro do input */  
+}  
+
+button {  
+    background-color: #28a745;  
+    color: white;  
+    border: none;  
+    padding: 10px;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    font-size: 1em;  
+    margin-bottom: 10px; /* Adiciona espaçamento entre os botões */  
+}  
+
+button:hover {  
+    background-color: #218838;  
+}  
+
+a {  
+    text-align: center;  
+    display: block;  
+    margin-top: 10px;  
+    color: #1e90ff; /* Azul brilhante para links */  
+    text-decoration: none;  
+}  
+
+a:hover {  
+    text-decoration: underline;  
+}  
+
+#res {  
+    margin-top: 15px;  
+    font-weight: bold;  
+    color: #e0e0e0; /* Cor clara para o resultado */  
+    text-align: center;  
+}  

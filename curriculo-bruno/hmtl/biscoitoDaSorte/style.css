@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #190361, #bb00ff);
+    animation: gradient 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+#app {
+    display: grid;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+div.hide {
+    display: none;
+}
+
+.card-1,
+.card-2 {
+    display: flex;
+    width: 424px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.8);
+
+}
+
+.card-1 h1,
+.card-2 h1 {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Montserrat", 'Times New Roman', Times, serif;
+}
+
+.card-1 p,
+.card-2 p {
+    margin-top: 16px;
+    font-size: 15px;
+    font-family: "DM Sans", sans-serif;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 64px 64px;
+}
+
+.fortuneCookie img {
+    margin-top: 26px;
+    width: 248px;
+    height: 190px;
+    cursor: pointer;
+}
+
+.closedCookie:hover {
+
+    -webkit-animation: vibrate-3 0.5s linear infinite both;
+    animation: vibrate-3 0.5s linear infinite both;
+}
+
+@keyframes vibrate-3 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    10% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    20% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    30% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, -2px);
+    }
+
+    40% {
+        -webkit-transform: translate(2px, 2px);
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    70% {
+        -webkit-transform: translate(-2px, 2px);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        -webkit-transform: translate(-2px, -2px);
+        transform: translate(-2px, -2px);
+    }
+
+    90% {
+        -webkit-transform: translate(2px, -2px);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.goodluck-message {
+    display: flex;
+    padding: 10px;
+    margin-top: 17px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #e4edf1;
+    box-shadow: 2px 2px 2px 0 rgba(85, 85, 85, 0.5);
+    -webkit-animation: scale-in-center 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: scale-in-center 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.goodluck-message p {
+    font-family: "Dancing Script", sans-serif;
+    font-size: 24px;
+
+}
+
+@keyframes scale-in-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+button {
+    display: flex;
+    padding: 16px;
+    align-items: self-start;
+    gap: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #ff9500;
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #d88106;
+    transition: ease-in 0.2s;
+}

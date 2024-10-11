@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junta String</title>
+    <style>
+        /* Estilos CSS feito por Sider Gpt, pq to com precisa de estilizar o código */
+    body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 20px;  
+}  
+
+#page {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    background: white;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
+    padding: 20px;  
+    width: 300px;  
+    margin: auto;  
+}  
+
+h1 {  
+    color: #333;  
+    text-align: center;  
+}  
+
+form {  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+label {  
+    margin-bottom: 10px;  
+    color: #555;  
+}  
+
+input[type="text"] {  
+    padding: 8px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    width: 100%;  
+    box-sizing: border-box;  
+}  
+
+button {  
+    background-color: #28a745;  
+    color: white;  
+    border: none;  
+    padding: 10px;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    font-size: 1em;  
+    margin-top: 15px;  
+}  
+
+button:hover {  
+    background-color: #218838;  
+}  
+
+#res {  
+    margin-top: 15px;  
+    font-weight: bold;  
+    color: #333;  
+    text-align: center;  
+}  
+
+a {  
+    text-align: center;  
+    display: block;  
+    margin-top: 15px;  
+    color: #007bff;  
+    text-decoration: none;  
+}  
+
+a:hover {  
+    text-decoration: underline;  
+}  
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1>Junta Strings</h1>
+        <form>
+            <label for="string1">Primeira String: <input type="text" name="string1" id="string1"></label>
+            <label for="">Segunda String: <input type="text" name="string2" id="string2"></label>
+            <button type="button" onclick="juntaString()">Junta!</button>
+            <p id="res"></p>
+            <a href="./index.html" target="_self">Clique aqui para voltar para a calculadora!</a>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+     function juntaString(){
+         let string1 = document.getElementById("string1").value;
+         let string2 = document.getElementById("string2").value;
+         document.getElementById("res").innerHTML = `A string concatenada entre ${string1} e ${string2} e igual a ${string1 + " " + string2}`
+     }
+   </script>
+</body>
+</html>
